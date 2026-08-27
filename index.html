@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dexstudio1 | Official Website</title>
+    <style>
+        /* --- COLOR VARIABLES (Matches your Logo) --- */
+        :root {
+            --primary-bg: #0A1A33;      /* Deep Navy Background */
+            --primary-text: #F0F4F8;    /* Light Silver/White Text */
+            --secondary-text: #C0C5CE;  /* Metallic Silver */
+            --accent: #1E90FF;          /* Electric Blue Ring */
+            --accent-glow: rgba(30, 144, 255, 0.4); 
+        }
+
+        /* --- GLOBAL STYLES --- */
+        body {
+            background-color: var(--primary-bg);
+            color: var(--primary-text);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: radial-gradient(circle at center, #10254a 0%, #0A1A33 70%);
+        }
+
+        .container {
+            text-align: center;
+            max-width: 500px;
+            padding: 40px;
+            border: 1px solid var(--secondary-text);
+            border-radius: 20px;
+            background-color: rgba(10, 26, 51, 0.8);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* --- LOGO & BRAND --- */
+        .logo {
+            width: 180px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 15px var(--accent-glow));
+        }
+
+        h1 {
+            color: var(--secondary-text);
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin: 0 0 20px 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* --- SOCIAL BUTTONS --- */
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            background-color: rgba(192, 197, 206, 0.1);
+            border: 1px solid var(--secondary-text);
+            border-radius: 10px;
+            color: var(--secondary-text);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover effect (Electric Blue glow like the ring) */
+        .social-btn:hover {
+            background-color: var(--accent);
+            color: var(--primary-bg);
+            border-color: var(--accent);
+            box-shadow: 0 0 20px var(--accent-glow);
+            transform: translateY(-3px);
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: rgba(240, 244, 248, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- CHANGE THIS src BELOW TO YOUR LOGO FILE NAME -->
+        <img src="logo.jpg" alt="Dexstudio1 Logo" class="logo">
+        
+        <h1>Dexstudio1</h1>
+
+        <div class="social-links">
+            
+            <!-- TWITTER LINK (Clickable) -->
+            <a href="https://x.com/LincolnA68058" target="_blank" class="social-btn">
+                Follow us on X (Twitter)
+            </a>
+
+            <!-- YOUTUBE LINK (Clickable) -->
+            <a href="https://youtube.com/@dexstudiomarketing?si=oHwcsxQucnz7XIw4" target="_blank" class="social-btn">
+                Subscribe on YouTube
+            </a>
+
+            <!-- TIKTOK LINK (Clickable) -->
+            <a href="https://www.tiktok.com/@clementagency11?_r=1&_t=ZS-99EkMzYjRXI" target="_blank" class="social-btn">
+                Follow on TikTok
+            </a>
+
+            <!-- TELEGRAM LINK (Clickable) -->
+            <a href="https://t.me/Dexstudio1" target="_blank" class="social-btn">
+                Join our Telegram
+            </a>
+
+        </div>
+
+        <div class="footer">
+            &copy; 2026 Dexstudio1. All rights reserved.
+        </div>
+    </div>
+
+</body>
+</html>
