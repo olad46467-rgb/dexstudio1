@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dexstudio1 | Marketing</title>
-    <!-- Font Awesome for Icons -->
+    <title>Dexstudio1 | Marketing & Services</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-bg: #000000;
+            --primary-bg: #050505;
             --secondary-bg: #111111;
             --card-bg: #161616;
             --yellow: #FFC107;
@@ -18,298 +17,114 @@
             --blue-telegram: #2AABEE;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--primary-bg); color: var(--text-white); overflow-x: hidden; }
 
-        body {
-            background-color: var(--primary-bg);
-            color: var(--text-white);
-            overflow-x: hidden;
-        }
+        /* --- NAVBAR --- */
+        nav { background-color: #0a0a0a; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 1000; }
+        .nav-logo { display: flex; align-items: center; gap: 10px; font-weight: bold; font-size: 1.2rem; }
+        .nav-logo img { width: 40px; height: 40px; border-radius: 50%; }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { color: var(--text-white); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--yellow); }
+        .nav-btn { background-color: var(--yellow); color: #000; border: none; padding: 10px 20px; border-radius: 5px; font-weight: bold; cursor: pointer; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .nav-btn:hover { background-color: var(--yellow-hover); }
 
-        /* NAVBAR */
-        nav {
-            background-color: #0a0a0a;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #222;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+        /* --- HERO SECTION --- */
+        .hero { padding: 80px 5% 50px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 40px; background: radial-gradient(circle at top right, rgba(255, 193, 7, 0.1) 0%, transparent 50%); }
+        .hero-text { flex: 1; min-width: 300px; }
+        .badge { border: 1px solid var(--yellow); color: var(--yellow); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; display: inline-block; margin-bottom: 20px; font-weight: 600; letter-spacing: 1px; }
+        .hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
+        .hero h1 span { color: var(--yellow); }
+        .hero p { color: var(--text-grey); margin-bottom: 30px; max-width: 500px; line-height: 1.6; }
+        .cta-container { display: flex; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
+        .btn-primary { background-color: var(--yellow); color: #000; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 8px; display: inline-flex; align-items: center; gap: 10px; font-size: 1rem; transition: 0.3s; }
+        .btn-primary:hover { background-color: var(--yellow-hover); }
+        .btn-secondary { background-color: transparent; color: var(--text-white); border: 1px solid var(--text-grey); padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 8px; display: inline-flex; align-items: center; gap: 10px; font-size: 1rem; transition: 0.3s; }
+        .btn-secondary:hover { border-color: var(--yellow); color: var(--yellow); }
+        
+        .hero-image { flex: 1; min-width: 300px; display: flex; justify-content: center; }
+        .hero-image img { max-width: 400px; width: 100%; border-radius: 20px; box-shadow: 0 0 30px rgba(255, 193, 7, 0.2); }
 
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
+        /* --- SECTION HEADERS --- */
+        section { padding: 60px 5%; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 2.5rem; margin-bottom: 10px; }
+        .section-header h2 span { color: var(--yellow); }
+        .section-header p { color: var(--text-grey); max-width: 600px; margin: 0 auto; }
 
-        .nav-logo img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-        }
+        /* --- SERVICES SECTION --- */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .service-card { background-color: var(--card-bg); border: 1px solid #333; border-radius: 15px; padding: 30px; transition: all 0.3s ease; position: relative; }
+        .service-card:hover { border-color: var(--yellow); transform: translateY(-5px); box-shadow: 0 5px 15px rgba(255, 193, 7, 0.1); }
+        .service-icon { font-size: 2rem; margin-bottom: 20px; color: var(--yellow); }
+        .service-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+        .service-card p { color: var(--text-grey); font-size: 0.9rem; margin-bottom: 20px; }
+        .price { font-size: 2rem; color: var(--yellow); font-weight: bold; margin-bottom: 20px; }
+        .price span { font-size: 1rem; color: var(--text-grey); font-weight: normal; }
+        .order-btn { background-color: var(--yellow); color: #000; padding: 12px; text-align: center; text-decoration: none; font-weight: bold; border-radius: 8px; display: block; transition: 0.3s; }
+        .order-btn:hover { background-color: var(--yellow-hover); }
+        
+        /* --- WHY CHOOSE US --- */
+        .why-section { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
+        .why-image { flex: 1; text-align: center; }
+        .why-image img { max-width: 350px; border-radius: 50%; box-shadow: 0 0 50px rgba(255, 193, 7, 0.2); }
+        .why-content { flex: 1; min-width: 300px; }
+        .why-content h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .why-content h2 span { color: var(--yellow); }
+        .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px; }
+        .why-item { background-color: var(--card-bg); border: 1px solid #333; padding: 15px; border-radius: 8px; display: flex; align-items: center; gap: 10px; font-size: 0.9rem; }
+        .why-item i { color: var(--yellow); }
 
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
+        /* --- HOW IT WORKS --- */
+        .how-steps { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+        .how-step { background-color: var(--card-bg); border: 1px solid #333; padding: 20px; border-radius: 10px; display: flex; align-items: center; gap: 20px; }
+        .step-num { background-color: var(--yellow); color: #000; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold; flex-shrink: 0; }
+        .how-step h4 { margin-bottom: 5px; }
+        .how-step p { color: var(--text-grey); font-size: 0.9rem; }
 
-        .nav-links a {
-            color: var(--text-white);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: 0.3s;
-        }
+        /* --- REVIEWS --- */
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .review-card { background-color: var(--card-bg); border: 1px solid #333; padding: 30px; border-radius: 10px; }
+        .stars { color: var(--yellow); margin-bottom: 15px; }
+        .review-card p { color: var(--text-grey); font-style: italic; }
 
-        .nav-links a:hover {
-            color: var(--yellow);
-        }
+        /* --- FAQ --- */
+        .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
+        details { background-color: var(--card-bg); border: 1px solid #333; border-radius: 8px; padding: 15px 20px; cursor: pointer; }
+        summary { font-weight: bold; font-size: 1.1rem; display: flex; justify-content: space-between; align-items: center; }
+        summary::after { content: '▾'; color: var(--yellow); }
+        details[open] summary::after { content: '▴'; }
+        details p { color: var(--text-grey); margin-top: 15px; padding-top: 15px; border-top: 1px solid #333; }
 
-        .nav-btn {
-            background-color: var(--yellow);
-            color: #000;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+        /* --- CTA / FOOTER --- */
+        .cta-box { background-color: var(--card-bg); border: 1px solid var(--yellow); border-radius: 20px; padding: 50px; text-align: center; margin-bottom: 50px; }
+        .cta-box h2 { font-size: 2.5rem; margin-bottom: 15px; }
+        .cta-box h2 span { color: var(--yellow); }
+        .cta-box p { color: var(--text-grey); margin-bottom: 30px; }
 
-        .nav-btn:hover {
-            background-color: var(--yellow-hover);
-        }
+        footer { background-color: #0a0a0a; padding: 30px 5%; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #222; }
+        .footer-left { display: flex; align-items: center; gap: 10px; }
+        .footer-left img { width: 40px; height: 40px; border-radius: 50%; }
+        .footer-left h3 { font-size: 1rem; }
+        .footer-left p { font-size: 0.8rem; color: var(--text-grey); }
+        .footer-right p { font-size: 0.8rem; color: var(--text-grey); }
 
-        /* HERO SECTION (Social Media Only) */
-        .hero {
-            padding: 100px 5% 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .hero-text {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .badge {
-            border: 1px solid var(--yellow);
-            color: var(--yellow);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            display: inline-block;
-            margin-bottom: 20px;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            color: var(--text-white);
-        }
-
-        .hero h1 span {
-            color: var(--yellow);
-        }
-
-        .hero p {
-            color: var(--text-grey);
-            margin-bottom: 30px;
-            max-width: 500px;
-            line-height: 1.6;
-        }
-
-        .cta-container {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background-color: var(--yellow);
-            color: #000;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 8px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1rem;
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--text-white);
-            border: 1px solid var(--text-grey);
-            padding: 15px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 8px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1rem;
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--yellow);
-            color: var(--yellow);
-        }
-
-        /* Social Buttons Grid */
-        .social-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-card {
-            background-color: var(--card-bg);
-            border: 1px solid #333;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            text-decoration: none;
-            color: var(--text-white);
-            transition: all 0.3s ease;
-        }
-
-        .social-card i {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .social-card span {
-            font-weight: bold;
-        }
-
-        .social-card:hover {
-            border-color: var(--yellow);
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.1);
-        }
-
-        /* Hero Image Area */
-        .hero-image {
-            flex: 1;
-            min-width: 300px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .hero-image img {
-            max-width: 400px;
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 0 30px rgba(255, 193, 7, 0.2);
-        }
-
-        /* FLOATING TELEGRAM BUTTON */
-        .telegram-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 60px;
-            height: 60px;
-            background-color: var(--blue-telegram);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            z-index: 1000;
-            transition: transform 0.3s;
-        }
-
-        .telegram-float:hover {
-            transform: scale(1.1);
-        }
-
-        .telegram-float i {
-            color: white;
-            font-size: 1.8rem;
-        }
-
-        /* FOOTER */
-        footer {
-            background-color: #0a0a0a;
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid #222;
-            margin-top: 50px;
-        }
-
-        .footer-left {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .footer-left img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-        }
-
-        .footer-left h3 {
-            font-size: 1rem;
-        }
-
-        .footer-left p {
-            font-size: 0.8rem;
-            color: var(--text-grey);
-        }
-
-        .footer-right p {
-            font-size: 0.8rem;
-            color: var(--text-grey);
-        }
-
-        .footer-right a {
-            color: var(--blue-telegram);
-            text-decoration: none;
-        }
+        /* --- FLOATING TELEGRAM --- */
+        .telegram-float { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background-color: var(--blue-telegram); border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1000; transition: transform 0.3s; }
+        .telegram-float:hover { transform: scale(1.1); }
+        .telegram-float i { color: white; font-size: 1.8rem; }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero {
-                flex-direction: column-reverse;
-                text-align: center;
-                padding-top: 50px;
-            }
-            .hero p {
-                margin: 0 auto 30px;
-            }
-            .cta-container {
-                justify-content: center;
-            }
-            .nav-links {
-                display: none; /* Hides links on mobile for simplicity */
-            }
+            .hero { flex-direction: column-reverse; text-align: center; padding-top: 50px; }
+            .hero p { margin: 0 auto 30px; }
+            .cta-container { justify-content: center; }
+            .nav-links { display: none; }
+            .why-section { flex-direction: column; text-align: center; }
+            .why-grid { grid-template-columns: 1fr; }
+            .why-item { justify-content: center; }
+            .cta-box h2 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -318,75 +133,242 @@
     <!-- NAVBAR -->
     <nav>
         <div class="nav-logo">
-            <img src="logo.jpg" alt="Dexstudio1 Logo"> <!-- CHANGE YOUR LOGO HERE -->
+            <img src="logo.jpg" alt="Dexstudio1 Logo"> <!-- CHANGE LOGO HERE -->
             <span>Dexstudio1</span>
         </div>
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Socials</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#faq">FAQ</a></li>
         </ul>
-        <a href="https://t.me/Dexstudio1" target="_blank" class="nav-btn">
-            <i class="fa-solid fa-envelope"></i> Message Now
-        </a>
+        <a href="https://t.me/Dexstudio1" target="_blank" class="nav-btn"><i class="fa-solid fa-envelope"></i> Message Now</a>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
+    <!-- HERO -->
+    <div id="home" class="hero">
         <div class="hero-text">
-            <div class="badge"><i class="fa-solid fa-bolt"></i> DIGITAL MARKETING</div>
-            <h1>Connect With <br><span>Dexstudio1</span></h1>
-            <p>Follow our official channels for the latest updates, marketing tips, and direct support. Choose your favorite platform below to get started.</p>
+            <div class="badge"><i class="fa-solid fa-bolt"></i> SOCIAL MEDIA & DIGITAL MARKETING</div>
+            <h1>Grow Your <br>Project With <br><span>Dexstudio1</span></h1>
+            <p>Professional digital marketing solutions for bots, channels, and campaigns. Follow our socials and message us directly on Telegram.</p>
             
             <div class="cta-container">
-                <a href="https://t.me/Dexstudio1" target="_blank" class="btn-primary">
-                    <i class="fa-solid fa-rocket"></i> Get Started Now
-                </a>
-                <a href="#socials" class="btn-secondary">
-                    <i class="fa-solid fa-play"></i> How It Works
-                </a>
+                <a href="https://t.me/Dexstudio1" target="_blank" class="btn-primary"><i class="fa-solid fa-rocket"></i> Get Started Now</a>
+                <a href="#how" class="btn-secondary"><i class="fa-solid fa-play"></i> How It Works</a>
             </div>
 
-            <!-- SOCIAL MEDIA GRID -->
-            <div id="socials" class="social-grid">
-                <!-- Twitter -->
-                <a href="https://x.com/LincolnA68058" target="_blank" class="social-card">
-                    <i class="fa-brands fa-x-twitter" style="color: #ffffff;"></i>
-                    <span>Follow on X</span>
-                </a>
-                <!-- YouTube -->
-                <a href="https://youtube.com/@dexstudiomarketing?si=oHwcsxQucnz7XIw4" target="_blank" class="social-card">
-                    <i class="fa-brands fa-youtube" style="color: #FF0000;"></i>
-                    <span>Subscribe on YouTube</span>
-                </a>
-                <!-- TikTok -->
-                <a href="https://www.tiktok.com/@clementagency11?_r=1&_t=ZS-99EkMzYjRXI" target="_blank" class="social-card">
-                    <i class="fa-brands fa-tiktok" style="color: #ffffff;"></i>
-                    <span>Follow on TikTok</span>
-                </a>
-                <!-- Telegram -->
-                <a href="https://t.me/Dexstudio1" target="_blank" class="social-card">
-                    <i class="fa-brands fa-telegram" style="color: #2AABEE;"></i>
-                    <span>Join Telegram</span>
-                </a>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                <a href="https://x.com/LincolnA68058" target="_blank" style="color:var(--text-grey); text-decoration:none;"><i class="fa-brands fa-x-twitter"></i> X/Twitter</a>
+                <a href="https://youtube.com/@dexstudiomarketing?si=oHwcsxQucnz7XIw4" target="_blank" style="color:var(--text-grey); text-decoration:none;"><i class="fa-brands fa-youtube"></i> YouTube</a>
+                <a href="https://www.tiktok.com/@clementagency11?_r=1&_t=ZS-99EkMzYjRXI" target="_blank" style="color:var(--text-grey); text-decoration:none;"><i class="fa-brands fa-tiktok"></i> TikTok</a>
             </div>
         </div>
 
-        <!-- HERO IMAGE -->
         <div class="hero-image">
-            <img src="logo.jpg" alt="Dexstudio1 Marketing"> <!-- CHANGE YOUR LOGO HERE -->
+            <img src="logo.jpg" alt="Dexstudio1"> <!-- CHANGE LOGO HERE -->
+        </div>
+    </div>
+
+    <!-- SERVICES SECTION -->
+    <section id="services">
+        <div class="section-header">
+            <div class="badge" style="display:block; width: fit-content; margin: 0 auto 20px;">OUR SERVICES</div>
+            <h2>Choose Your <span>Service</span></h2>
+            <p>Click any service to contact Dexstudio1 on Telegram. The selected service and price will already be included in your message.</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- Card 1 -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-robot"></i></div>
+                <h3>Run Ads for Bot</h3>
+                <p>Promote your Telegram bot through advertising designed to increase visibility and reach relevant audiences.</p>
+                <div class="price">$25 <span>/ service</span></div>
+                <a href="https://t.me/Dexstudio1" target="_blank" class="order-btn"><i class="fa-solid fa-bolt"></i> Order Now</a>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                <h3>Run Ads for Channel</h3>
+                <p>Promote your Telegram channel and increase visibility among audiences relevant to your content or niche.</p>
+                <div class="price">$50 <span>/ service</span></div>
+                <a href="https://t.me/Dexstudio1" target="_blank" class="order-btn"><i class="fa-solid fa-bolt"></i> Order Now</a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                <h3>Run Ads for Mini App</h3>
+                <p>Promote your Telegram Mini App and introduce it to audiences interested in your product or category.</p>
+                <div class="price">$40 <span>/ service</span></div>
+                <a href="https://t.me/Dexstudio1" target="_blank" class="order-btn"><i class="fa-solid fa-bolt"></i> Order Now</a>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-check-circle"></i></div>
+                <h3>Sell Approved Bot</h3>
+                <p>Service for clients with an already approved Telegram advertising campaign for a bot.</p>
+                <div class="price">$70 <span>/ service</span></div>
+                <a href="https://t.me/Dexstudio1" target="_blank" class="order-btn"><i class="fa-solid fa-bolt"></i> Order Now</a>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                <h3>Sell Approved Channel</h3>
+                <p>Service for clients with an already approved Telegram advertising campaign for a channel.</p>
+                <div class="price">$100 <span>/ service</span></div>
+                <a href="https://t.me/Dexstudio1" target="_blank" class="order-btn"><i class="fa-solid fa-bolt"></i> Order Now</a>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-rocket"></i></div>
+                <h3>Sell Approved Mini App</h3>
+                <p>Service for clients with an already approved Telegram advertising campaign for a Telegram Mini App.</p>
+                <div class="price">$80 <span>/ service</span></div>
+                <a href="https://t.me/Dexstudio1" target="_blank" class="order-btn"><i class="fa-solid fa-bolt"></i> Order Now</a>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-gear"></i></div>
+                <h3>Automation Bot</h3>
+                <p>Automation post bot service for posting promotional content to your Telegram channel.</p>
+                <div class="price">$50 <span>/ service</span></div>
+                <a href="https://t.me/Dexstudio1" target="_blank" class="order-btn"><i class="fa-solid fa-bolt"></i> Order Now</a>
+            </div>
         </div>
     </section>
 
-    <!-- FLOATING TELEGRAM BUTTON -->
-    <a href="https://t.me/Dexstudio1" target="_blank" class="telegram-float">
-        <i class="fa-brands fa-telegram"></i>
-    </a>
+    <!-- WHY CHOOSE US -->
+    <section id="why">
+        <div class="why-section">
+            <div class="why-image">
+                <img src="logo.jpg" alt="Why Choose Us"> <!-- CHANGE LOGO HERE -->
+            </div>
+            <div class="why-content">
+                <div class="badge">WHY CHOOSE US?</div>
+                <h2>Why <span>Dexstudio1?</span></h2>
+                <p>Professional communication, clear service packages, direct Telegram support and simple ordering.</p>
+                
+                <div class="why-grid">
+                    <div class="why-item"><i class="fa-solid fa-check"></i> Clear Service Packages</div>
+                    <div class="why-item"><i class="fa-solid fa-check"></i> Direct Telegram Support</div>
+                    <div class="why-item"><i class="fa-solid fa-check"></i> Targeted Campaign Focus</div>
+                    <div class="why-item"><i class="fa-solid fa-check"></i> Global Audience Reach</div>
+                    <div class="why-item"><i class="fa-solid fa-check"></i> Transparent Pricing</div>
+                    <div class="why-item"><i class="fa-solid fa-check"></i> Easy Ordering</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- FOOTER -->
+    <!-- HOW IT WORKS -->
+    <section id="how">
+        <div class="section-header">
+            <div class="badge" style="display:block; width: fit-content; margin: 0 auto 20px;">SIMPLE PROCESS</div>
+            <h2>How It <span>Works</span></h2>
+            <p>Choose a service and contact us directly.</p>
+        </div>
+
+        <div class="how-steps">
+            <div class="how-step">
+                <div class="step-num">1</div>
+                <div>
+                    <h4>Choose Your Service</h4>
+                    <p>Select the service that matches your project.</p>
+                </div>
+            </div>
+            <div class="how-step">
+                <div class="step-num">2</div>
+                <div>
+                    <h4>Click Order Now</h4>
+                    <p>Telegram opens with your selected service and price already included.</p>
+                </div>
+            </div>
+            <div class="how-step">
+                <div class="step-num">3</div>
+                <div>
+                    <h4>Send Your Project Details</h4>
+                    <p>Tell us about your bot, channel, Mini App or campaign.</p>
+                </div>
+            </div>
+            <div class="how-step">
+                <div class="step-num">4</div>
+                <div>
+                    <h4>Discuss The Campaign</h4>
+                    <p>We'll discuss requirements and the next steps with you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews">
+        <div class="section-header">
+            <div class="badge" style="display:block; width: fit-content; margin: 0 auto 20px;">CLIENT REVIEWS</div>
+            <h2>What <span>Clients Say</span></h2>
+            <p>Replace these example reviews with genuine customer feedback.</p>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p>"Professional communication and an easy ordering process."</p>
+            </div>
+            <div class="review-card">
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p>"The service was clearly explained and communication was straightforward."</p>
+            </div>
+            <div class="review-card">
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p>"Quick communication and clear campaign details."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="section-header">
+            <div class="badge" style="display:block; width: fit-content; margin: 0 auto 20px;">FREQUENTLY ASKED QUESTIONS</div>
+            <h2>FAQ</h2>
+        </div>
+
+        <div class="faq-list">
+            <details>
+                <summary>How do I order a service?</summary>
+                <p>Click "Order Now" on the service you want, which will open Telegram with your message pre-filled, and send it to us!</p>
+            </details>
+            <details>
+                <summary>How do I contact Dexstudio1 Marketing?</summary>
+                <p>You can directly message us on Telegram at @Dexstudio1.</p>
+            </details>
+            <details>
+                <summary>Can I request a custom campaign?</summary>
+                <p>Yes! Use the telegram button below to message us directly about your specific requirements.</p>
+            </details>
+            <details>
+                <summary>Can I ask questions before ordering?</summary>
+                <p>Absolutely. Feel free to reach out on Telegram anytime before making a purchase.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- CTA / FOOTER -->
+    <section id="contact">
+        <div class="cta-box">
+            <h2>Ready To <span>Grow Your Project?</span></h2>
+            <p>Choose a service above or message Dexstudio1 directly.</p>
+            <a href="https://t.me/Dexstudio1" target="_blank" class="btn-primary" style="padding: 15px 40px;"><i class="fa-solid fa-bolt"></i> Message Dexstudio1 Now</a>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-left">
-            <img src="logo.jpg" alt="Dexstudio1 Logo"> <!-- CHANGE YOUR LOGO HERE -->
+            <img src="logo.jpg" alt="Dexstudio1 Logo"> <!-- CHANGE LOGO HERE -->
             <div>
                 <h3>Dexstudio1</h3>
                 <p>Marketing</p>
@@ -396,6 +378,11 @@
             <p>&copy; 2026 Dexstudio1. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- FLOATING TELEGRAM BUTTON -->
+    <a href="https://t.me/Dexstudio1" target="_blank" class="telegram-float">
+        <i class="fa-brands fa-telegram"></i>
+    </a>
 
 </body>
 </html>
