@@ -3,134 +3,399 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dexstudio1 | Official Website</title>
+    <title>Dexstudio1 | Marketing</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* --- COLOR VARIABLES (Matches your Logo) --- */
         :root {
-            --primary-bg: #0A1A33;      /* Deep Navy Background */
-            --primary-text: #F0F4F8;    /* Light Silver/White Text */
-            --secondary-text: #C0C5CE;  /* Metallic Silver */
-            --accent: #1E90FF;          /* Electric Blue Ring */
-            --accent-glow: rgba(30, 144, 255, 0.4); 
+            --primary-bg: #000000;
+            --secondary-bg: #111111;
+            --card-bg: #161616;
+            --yellow: #FFC107;
+            --yellow-hover: #FFD54F;
+            --text-white: #ffffff;
+            --text-grey: #b3b3b3;
+            --blue-telegram: #2AABEE;
         }
 
-        /* --- GLOBAL STYLES --- */
-        body {
-            background-color: var(--primary-bg);
-            color: var(--primary-text);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            color: var(--text-white);
+            overflow-x: hidden;
+        }
+
+        /* NAVBAR */
+        nav {
+            background-color: #0a0a0a;
+            padding: 15px 5%;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            min-height: 100vh;
-            background-image: radial-gradient(circle at center, #10254a 0%, #0A1A33 70%);
+            border-bottom: 1px solid #222;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        .container {
-            text-align: center;
-            max-width: 500px;
-            padding: 40px;
-            border: 1px solid var(--secondary-text);
-            border-radius: 20px;
-            background-color: rgba(10, 26, 51, 0.8);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        /* --- LOGO & BRAND --- */
-        .logo {
-            width: 180px;
-            height: auto;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 15px var(--accent-glow));
-        }
-
-        h1 {
-            color: var(--secondary-text);
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin: 0 0 20px 0;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-        }
-
-        /* --- SOCIAL BUTTONS --- */
-        .social-links {
+        .nav-logo {
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .nav-logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--yellow);
+        }
+
+        .nav-btn {
+            background-color: var(--yellow);
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-btn:hover {
+            background-color: var(--yellow-hover);
+        }
+
+        /* HERO SECTION (Social Media Only) */
+        .hero {
+            padding: 100px 5% 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .badge {
+            border: 1px solid var(--yellow);
+            color: var(--yellow);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--text-white);
+        }
+
+        .hero h1 span {
+            color: var(--yellow);
+        }
+
+        .hero p {
+            color: var(--text-grey);
+            margin-bottom: 30px;
+            max-width: 500px;
+            line-height: 1.6;
+        }
+
+        .cta-container {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: var(--yellow);
+            color: #000;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-white);
+            border: 1px solid var(--text-grey);
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--yellow);
+            color: var(--yellow);
+        }
+
+        /* Social Buttons Grid */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
             margin-top: 20px;
         }
 
-        .social-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 15px;
-            background-color: rgba(192, 197, 206, 0.1);
-            border: 1px solid var(--secondary-text);
+        .social-card {
+            background-color: var(--card-bg);
+            border: 1px solid #333;
             border-radius: 10px;
-            color: var(--secondary-text);
+            padding: 20px;
+            text-align: center;
             text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: bold;
+            color: var(--text-white);
             transition: all 0.3s ease;
         }
 
-        /* Hover effect (Electric Blue glow like the ring) */
-        .social-btn:hover {
-            background-color: var(--accent);
-            color: var(--primary-bg);
-            border-color: var(--accent);
-            box-shadow: 0 0 20px var(--accent-glow);
-            transform: translateY(-3px);
+        .social-card i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
         }
 
-        /* --- FOOTER --- */
-        .footer {
-            margin-top: 30px;
+        .social-card span {
+            font-weight: bold;
+        }
+
+        .social-card:hover {
+            border-color: var(--yellow);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.1);
+        }
+
+        /* Hero Image Area */
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 400px;
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(255, 193, 7, 0.2);
+        }
+
+        /* FLOATING TELEGRAM BUTTON */
+        .telegram-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--blue-telegram);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: transform 0.3s;
+        }
+
+        .telegram-float:hover {
+            transform: scale(1.1);
+        }
+
+        .telegram-float i {
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #0a0a0a;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #222;
+            margin-top: 50px;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-left img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .footer-left h3 {
+            font-size: 1rem;
+        }
+
+        .footer-left p {
             font-size: 0.8rem;
-            color: rgba(240, 244, 248, 0.5);
+            color: var(--text-grey);
+        }
+
+        .footer-right p {
+            font-size: 0.8rem;
+            color: var(--text-grey);
+        }
+
+        .footer-right a {
+            color: var(--blue-telegram);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 50px;
+            }
+            .hero p {
+                margin: 0 auto 30px;
+            }
+            .cta-container {
+                justify-content: center;
+            }
+            .nav-links {
+                display: none; /* Hides links on mobile for simplicity */
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- CHANGE THIS src BELOW TO YOUR LOGO FILE NAME -->
-        <img src="logo.jpg" alt="Dexstudio1 Logo" class="logo">
-        
-        <h1>Dexstudio1</h1>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-logo">
+            <img src="logo.jpg" alt="Dexstudio1 Logo"> <!-- CHANGE YOUR LOGO HERE -->
+            <span>Dexstudio1</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Socials</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <a href="https://t.me/Dexstudio1" target="_blank" class="nav-btn">
+            <i class="fa-solid fa-envelope"></i> Message Now
+        </a>
+    </nav>
 
-        <div class="social-links">
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-text">
+            <div class="badge"><i class="fa-solid fa-bolt"></i> DIGITAL MARKETING</div>
+            <h1>Connect With <br><span>Dexstudio1</span></h1>
+            <p>Follow our official channels for the latest updates, marketing tips, and direct support. Choose your favorite platform below to get started.</p>
             
-            <!-- TWITTER LINK (Clickable) -->
-            <a href="https://x.com/LincolnA68058" target="_blank" class="social-btn">
-                Follow us on X (Twitter)
-            </a>
+            <div class="cta-container">
+                <a href="https://t.me/Dexstudio1" target="_blank" class="btn-primary">
+                    <i class="fa-solid fa-rocket"></i> Get Started Now
+                </a>
+                <a href="#socials" class="btn-secondary">
+                    <i class="fa-solid fa-play"></i> How It Works
+                </a>
+            </div>
 
-            <!-- YOUTUBE LINK (Clickable) -->
-            <a href="https://youtube.com/@dexstudiomarketing?si=oHwcsxQucnz7XIw4" target="_blank" class="social-btn">
-                Subscribe on YouTube
-            </a>
-
-            <!-- TIKTOK LINK (Clickable) -->
-            <a href="https://www.tiktok.com/@clementagency11?_r=1&_t=ZS-99EkMzYjRXI" target="_blank" class="social-btn">
-                Follow on TikTok
-            </a>
-
-            <!-- TELEGRAM LINK (Clickable) -->
-            <a href="https://t.me/Dexstudio1" target="_blank" class="social-btn">
-                Join our Telegram
-            </a>
-
+            <!-- SOCIAL MEDIA GRID -->
+            <div id="socials" class="social-grid">
+                <!-- Twitter -->
+                <a href="https://x.com/LincolnA68058" target="_blank" class="social-card">
+                    <i class="fa-brands fa-x-twitter" style="color: #ffffff;"></i>
+                    <span>Follow on X</span>
+                </a>
+                <!-- YouTube -->
+                <a href="https://youtube.com/@dexstudiomarketing?si=oHwcsxQucnz7XIw4" target="_blank" class="social-card">
+                    <i class="fa-brands fa-youtube" style="color: #FF0000;"></i>
+                    <span>Subscribe on YouTube</span>
+                </a>
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@clementagency11?_r=1&_t=ZS-99EkMzYjRXI" target="_blank" class="social-card">
+                    <i class="fa-brands fa-tiktok" style="color: #ffffff;"></i>
+                    <span>Follow on TikTok</span>
+                </a>
+                <!-- Telegram -->
+                <a href="https://t.me/Dexstudio1" target="_blank" class="social-card">
+                    <i class="fa-brands fa-telegram" style="color: #2AABEE;"></i>
+                    <span>Join Telegram</span>
+                </a>
+            </div>
         </div>
 
-        <div class="footer">
-            &copy; 2026 Dexstudio1. All rights reserved.
+        <!-- HERO IMAGE -->
+        <div class="hero-image">
+            <img src="logo.jpg" alt="Dexstudio1 Marketing"> <!-- CHANGE YOUR LOGO HERE -->
         </div>
-    </div>
+    </section>
+
+    <!-- FLOATING TELEGRAM BUTTON -->
+    <a href="https://t.me/Dexstudio1" target="_blank" class="telegram-float">
+        <i class="fa-brands fa-telegram"></i>
+    </a>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-left">
+            <img src="logo.jpg" alt="Dexstudio1 Logo"> <!-- CHANGE YOUR LOGO HERE -->
+            <div>
+                <h3>Dexstudio1</h3>
+                <p>Marketing</p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p>&copy; 2026 Dexstudio1. All rights reserved.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
